@@ -7,8 +7,7 @@ gem 'rails', '4.2.6'
 gem 'mongoid', '5.1.3'
 
 # Security, Authentication and Authorization
-# gem 'bcrypt', '~> 3.1'
-# gem 'devise', '~> 3.5'
+gem 'devise', '~> 4.1'
 # gem 'doorkeeper', '~> 3.0'
 
 # Controller

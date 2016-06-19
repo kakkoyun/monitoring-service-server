@@ -10,7 +10,17 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
+
 //= require jquery
+//= require jquery.turbolinks
 //= require jquery_ujs
+// Put other jquery plugins after this point.
+//
+// Before this point.
 //= require turbolinks
+//= require bootstrap-sprockets
 //= require_tree .
+
+// Turbolinks settings
+Turbolinks.enableProgressBar();
+Turbolinks.pagesCached(20);
