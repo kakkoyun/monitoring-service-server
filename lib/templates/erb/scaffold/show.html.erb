@@ -1,0 +1,21 @@
+<%= content_for :header do -%>
+    <h1><%= singular_table_name.titlecase %>: <%%= @@<%= singular_table_name %> -%></h1>
+<%- end -%>
+
+<div class="row">
+  <div class="col-md-8">
+    <% attributes.reject(&:password_digest?).each do |attribute| -%>
+        <%%- if <%%= @<%= singular_table_name %>.<%= attribute.name %> -%>
+        <small><%= attribute.human_name %>:</small>
+        <p class="lead"><%%= @<%= singular_table_name %>.<%= attribute.name %> %></p>
+        <%%- end -%>
+    <% end -%>
+  </div>
+
+  <div class="col-md-4">
+    <h3><%= t('.actions') %></h3>
+    <p><%%= link_to 'Edit', edit_<%= singular_table_name %>_path(@<%= singular_table_name %>), class: 'btn btn-warning' %></p>
+    <p><%%= link_to 'Destroy', <%= singular_table_name %>, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger'%></p>
+    <p><%%= link_to 'Back', <%= index_helper %>_path, class: 'btn btn-default' %></p>
+  </div>
+</div>

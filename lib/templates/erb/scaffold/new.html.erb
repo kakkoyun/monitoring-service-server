@@ -1,0 +1,8 @@
+<%= content_for :header do -%>
+    <h1>New <%= singular_table_name.titleize %></h1>
+<%- end -%>
+
+<div class="row">
+  <%= render 'form' %>
+</div>
+

@@ -1,0 +1,33 @@
+<%= content_for :header do -%>
+    <h1>Listing <%= plural_table_name.titleize %>
+      <span class="actions">
+        <%%= link_to 'New <%= human_name %>', new_<%= singular_table_name %>_path, class: 'btn btn-success' %>
+      </span>
+    </h1>
+<%- end -%>
+
+<table class="table table-striped">
+  <thead>
+  <tr>
+    <% attributes.reject(&:password_digest?).each do |attribute| -%>
+        <th><%= attribute.human_name %></th>
+    <% end -%>
+    <th colspan="3">Actions</th>
+  </tr>
+  </thead>
+
+  <tbody>
+  <%% @<%= plural_table_name %>.each do |<%= singular_table_name %>| %>
+  <tr>
+    <% attributes.reject(&:password_digest?).each do |attribute| -%>
+        <td><%%= <%= singular_table_name %>.<%= attribute.name %> %></td>
+    <% end -%>
+    <td class="pull-right">
+      <%%= link_to 'Show', <%= singular_table_name %>, class: 'btn btn-sm btn-info' %>
+      <%%= link_to 'Edit', edit_<%= singular_table_name %>_path(<%= singular_table_name %>), class: 'btn btn-sm btn-warning' %>
+      <%%= link_to 'Destroy', <%= singular_table_name %>, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-sm btn-danger'%>
+    </td>
+  </tr>
+  <%% end %>
+  </tbody>
+</table>
