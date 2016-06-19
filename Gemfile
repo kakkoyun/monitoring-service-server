@@ -19,6 +19,8 @@ gem 'coffee-rails', '~> 4.1.0'
 gem 'jquery-rails', '~> 3.1'
 gem 'turbolinks', '~> 2.5'
 gem 'jquery-turbolinks', '~> 2.1'
+gem 'toastr-rails', '~> 1.0'
+gem 'tabs_on_rails', '~> 2.2'
 
 # Style
 gem 'sass-rails', '~> 5.0'

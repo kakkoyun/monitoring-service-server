@@ -40,6 +40,9 @@
 Rails.application.routes.draw do
   devise_for :users
 
+  resources :servers
+  root to: 'servers#index'
+
   # API Authentication
   use_doorkeeper
 
