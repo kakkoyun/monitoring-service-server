@@ -44,7 +44,9 @@ Rails.application.routes.draw do
   root to: 'servers#index'
 
   # API Authentication
-  use_doorkeeper
+  use_doorkeeper do
+    controllers applications: 'agent_applications'
+  end
 
   # API Documentation
   apipie
