@@ -8,7 +8,8 @@ gem 'mongoid', '5.1.3'
 
 # Security, Authentication and Authorization
 gem 'devise', '~> 4.1'
-# gem 'doorkeeper', '~> 3.0'
+gem 'doorkeeper', '~> 3.0'
+gem 'doorkeeper-mongodb', github: 'doorkeeper-gem/doorkeeper-mongodb' # Initial: 3.0.0
 
 # Controller
 # gem 'responders', '~> 2.1'
@@ -18,7 +19,6 @@ gem 'coffee-rails', '~> 4.1.0'
 gem 'jquery-rails', '~> 3.1'
 gem 'turbolinks', '~> 2.5'
 gem 'jquery-turbolinks', '~> 2.1'
-# gem 'kaminari', '~> 0.16'
 
 # Style
 gem 'sass-rails', '~> 5.0'
@@ -79,6 +79,9 @@ group :development do
 
   # Code Metrics
   gem 'metric_fu'
+
+  # Documenting
+  gem 'annotate'
 
   # Deployment
   # gem 'capistrano-rails'
