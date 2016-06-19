@@ -32,6 +32,9 @@ gem 'jbuilder', '~> 2.5'
 # Forms
 gem 'simple_form', '~> 3.2'
 
+# API Documentation
+gem 'apipie-rails'
+
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
   gem 'sdoc', '~> 0.4.0'
