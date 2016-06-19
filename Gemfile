@@ -12,7 +12,7 @@ gem 'doorkeeper', '~> 3.0'
 gem 'doorkeeper-mongodb', github: 'doorkeeper-gem/doorkeeper-mongodb' # Initial: 3.0.0
 
 # Controller
-# gem 'responders', '~> 2.1'
+gem 'responders', '~> 2.2'
 
 # Frontend
 gem 'coffee-rails', '~> 4.1.0'
@@ -26,8 +26,8 @@ gem 'uglifier', '>= 1.3.0'
 gem 'bootstrap-sass', '~> 3.3'
 
 # JSON Serialization
-# gem 'oj', '~> 2.12'
-# gem 'active_model_serializers', '~> 0.10.0'
+gem 'oj', '~> 2.12'
+gem 'jbuilder', '~> 2.5'
 
 # Forms
 gem 'simple_form', '~> 3.2'
