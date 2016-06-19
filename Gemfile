@@ -30,7 +30,7 @@ gem 'bootstrap-sass', '~> 3.3'
 # gem 'active_model_serializers', '~> 0.10.0'
 
 # Forms
-# gem 'simple_form', '~> 3.1'
+gem 'simple_form', '~> 3.2'
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
