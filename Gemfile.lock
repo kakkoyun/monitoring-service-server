@@ -77,6 +77,13 @@ GEM
     callsite (0.0.11)
     cane (2.6.2)
       parallel
+    capybara (2.7.1)
+      addressable
+      mime-types (>= 1.16)
+      nokogiri (>= 1.3.3)
+      rack (>= 1.0.0)
+      rack-test (>= 0.5.4)
+      xpath (~> 2.0)
     chronic (0.10.2)
     churn (0.0.35)
       chronic (>= 0.2.3)
@@ -121,6 +128,8 @@ GEM
     erubis (2.7.0)
     eventmachine (1.2.0.1)
     execjs (2.7.0)
+    factory_girl (4.7.0)
+      activesupport (>= 3.0.0)
     fattr (2.3.0)
     flay (2.8.0)
       erubis (~> 2.7.0)
@@ -274,6 +283,23 @@ GEM
       mime-types (>= 1.16)
     roodi (3.3.1)
       ruby_parser (~> 3.2, >= 3.2.2)
+    rspec-core (3.4.4)
+      rspec-support (~> 3.4.0)
+    rspec-expectations (3.4.0)
+      diff-lcs (>= 1.2.0, < 2.0)
+      rspec-support (~> 3.4.0)
+    rspec-mocks (3.4.1)
+      diff-lcs (>= 1.2.0, < 2.0)
+      rspec-support (~> 3.4.0)
+    rspec-rails (3.4.2)
+      actionpack (>= 3.0, < 4.3)
+      activesupport (>= 3.0, < 4.3)
+      railties (>= 3.0, < 4.3)
+      rspec-core (~> 3.4.0)
+      rspec-expectations (~> 3.4.0)
+      rspec-mocks (~> 3.4.0)
+      rspec-support (~> 3.4.0)
+    rspec-support (3.4.1)
     ruby-debug-ide (0.6.0)
       rake (>= 0.8.1)
     ruby-prof (0.15.9)
@@ -327,6 +353,8 @@ GEM
       procto (~> 0.0.2)
     warden (1.2.6)
       rack (>= 1.0)
+    xpath (2.0.0)
+      nokogiri (~> 1.3)
 
 PLATFORMS
   ruby
@@ -340,12 +368,14 @@ DEPENDENCIES
   brakeman
   bundler-audit
   byebug
+  capybara
   coffee-rails (~> 4.1.0)
   debase
   devise (~> 4.1)
   did_you_mean (~> 0.10)
   doorkeeper (~> 3.0)
   doorkeeper-mongodb!
+  factory_girl
   jbuilder (~> 2.5)
   jquery-rails (~> 3.1)
   jquery-turbolinks (~> 2.1)
@@ -359,6 +389,7 @@ DEPENDENCIES
   rails (= 4.2.6)
   rb-fsevent
   responders (~> 2.2)
+  rspec-rails (~> 3.4)
   ruby-debug-ide
   ruby-prof
   sass-rails (~> 5.0)
