@@ -46,9 +46,14 @@ group :development, :test do
   gem 'sqlite3'
   gem 'byebug'
 
+  # Testing Core
   gem 'rspec-rails', '~> 3.4'
-  gem 'capybara'
-  gem 'factory_girl'
+  gem 'capybara', '~> 2.7'
+  gem 'factory_girl_rails', '~> 4.7'
+
+  # Testing Utils
+  gem 'mongoid-rspec', '3.0.0'
+  # gem 'database_cleaner'
 end
 
 group :development do
