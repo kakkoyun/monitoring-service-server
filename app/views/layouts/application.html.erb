@@ -1,14 +1,16 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title><%= content_for?(:title) ? yield(:title) : "Monitoring Service Application" %></title>
-  <meta name="description" content="<%= content_for?(:description) ? yield(:description) : "Monitoring Service Application" %>">
+  <title><%= content_for?(:title) ? yield(:title) : t('layouts.application.title') %></title>
   <%= favicon_link_tag -%>
   <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= content_for :head %>
   <%= csrf_meta_tags %>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="<%= content_for?(:description) ? yield(:description) : t('layouts.application.title') %>">
 </head>
 <style type="text/css">
   * {
@@ -17,7 +19,7 @@
   }
 </style>
 <body id="<%= controller_name %>">
-<div id="wrapper">
+<div id="main-wrapper">
   <header>
     <%= render 'layouts/navigation' %>
   </header>

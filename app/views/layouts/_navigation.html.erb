@@ -13,8 +13,9 @@
 
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <%= tabs_tag open_tabs: { class:  "nav navbar-nav" }, builder: TabBuilder do |tab| %>
-          <%= tab.servers 'Servers', servers_path %>
+      <%= tabs_tag open_tabs: { class: "nav navbar-nav" }, builder: TabBuilder do |tab| %>
+          <%= tab.servers t('navigation.servers'), servers_path %>
+          <%= tab.applications t('navigation.applications'), oauth_applications_path %>
       <% end %>
       <ul class="nav navbar-nav navbar-right">
         <li class="dropdown">

@@ -7,9 +7,6 @@ $font-family-base: 'Proxima Nova Regular', sans-serif;
 $font-size-base: 15px;
 $border-radius-base: 4px;
 $list-group-border-radius: 0;
-$navbar-default-link-color: #fff;
-$navbar-default-link-hover-color: #fff;
-$navbar-default-link-active-color: #fff;
 
 header {
 }
@@ -17,20 +14,14 @@ header {
 main {
   @extend .container;
   padding-left: 30px;
-  width: 100%;
   height: 100%;
   min-height: 100%;
-  overflow: auto;
+  overflow-y: visible;
+  overflow-x: visible;
   box-sizing: border-box;
   position: relative;
 }
 
 section {
   @extend .row;
-}
-
-footer {
-  @extend .navbar-fixed-bottom;
-  width: 100%;
-  height: 40px;
 }
