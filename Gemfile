@@ -43,17 +43,24 @@ group :doc do
 end
 
 group :development, :test do
-  gem 'sqlite3'
   gem 'byebug'
+  gem 'pry-byebug'
+  gem 'pry-rails'
 
   # Testing Core
   gem 'rspec-rails', '~> 3.4'
-  gem 'capybara', '~> 2.7'
   gem 'factory_girl_rails', '~> 4.7'
+end
 
+group :test do
   # Testing Utils
   gem 'mongoid-rspec', '3.0.0'
-  # gem 'database_cleaner'
+  gem 'capybara', '~> 2.7'
+  gem 'poltergeist', '~> 1.9'
+  gem 'launchy', '~> 2.4'
+  gem 'guard-rspec', '~> 4.7'
+  gem 'database_cleaner', '~> 1.5'
+  gem 'faker', git: 'git@github.com:stympy/faker.git'
 end
 
 group :development do
@@ -62,8 +69,6 @@ group :development do
 
   # Debugging
   gem 'awesome_print'
-  gem 'pry-byebug'
-  gem 'pry-rails'
   gem 'better_errors'
   gem 'binding_of_caller'
   gem 'meta_request'
