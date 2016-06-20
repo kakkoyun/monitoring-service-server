@@ -1,0 +1,15 @@
+<%= content_for :header do -%>
+    <h1>
+      Editing Disk Usage
+      <span class="actions">
+        <%= link_to 'Show', @disk_usage, class: 'btn btn-info' %>
+      </span>
+    </h1>
+<%- end -%>
+
+
+
+<div class="row">
+  <%= render 'form' %>
+</div>
+

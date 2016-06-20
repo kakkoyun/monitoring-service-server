@@ -37,12 +37,23 @@ CpuUsage
 [32m    is invalid without a server[0m
 [32m    is invalid without an amount[0m
 
+DiskUsage
+[32m  should be a timestamped Mongoid document[0m
+[32m  has a valid factory[0m
+  associations
+[32m    belong to server[0m
+  validations
+[32m    is invalid without a server[0m
+[32m    is invalid without an amount[0m
+[32m    is invalid without a ratio[0m
+
 Server
 [32m  should be a timestamped Mongoid document[0m
 [32m  has a valid factory[0m
   associations
 [32m    belong to application[0m
 [32m    have many cpu usages[0m
+[32m    have many disk usages[0m
   validations
 [32m    is invalid without a name[0m
 [32m    is invalid without an application[0m
@@ -52,6 +63,15 @@ CpuUsages
   POST /cpu_usages
 [32m    creates a Cpu Usage with valid parameters[0m
 [32m    creates a Cpu Usage with given parameters[0m
+[32m    succeeded and return 201 with valid parameters[0m
+[32m    fails and return 406 with wrong format and return proper status code[0m
+[32m    fails and return 422 with invalid params[0m
+[32m    fails and return 401 with invalid token[0m
+
+DiskUsages
+  POST /disk_usages
+[32m    creates a Disk Usage with valid parameters[0m
+[32m    creates a Disk Usage with given parameters[0m
 [32m    succeeded and return 201 with valid parameters[0m
 [32m    fails and return 406 with wrong format and return proper status code[0m
 [32m    fails and return 422 with invalid params[0m
@@ -95,6 +115,6 @@ servers/new
 servers/show
 [32m  renders attributes in <p>[0m
 
-Finished in 2.17 seconds (files took 6.27 seconds to load)
-[32m55 examples, 0 failures[0m
+Finished in 2.55 seconds (files took 6.33 seconds to load)
+[32m68 examples, 0 failures[0m
 

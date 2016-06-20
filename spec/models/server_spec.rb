@@ -15,6 +15,10 @@ RSpec.describe Server, type: :model do
     it "have many cpu usages" do
       is_expected.to have_many(:cpu_usages).with_dependent(:destroy)
     end
+
+    it "have many disk usages" do
+      is_expected.to have_many(:disk_usages).with_dependent(:destroy)
+    end
   end
 
   context "validations" do

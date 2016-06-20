@@ -8,6 +8,7 @@ class Server
   belongs_to :application, class_name: Doorkeeper::Application.name
 
   has_many :cpu_usages, inverse_of: :server, dependent: :destroy
+  has_many :disk_usages, inverse_of: :server, dependent: :destroy
 
   validates :name, presence: true
   validates :application, presence: true

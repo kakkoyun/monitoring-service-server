@@ -1,0 +1,15 @@
+<%= content_for :header do -%>
+    <h1>Disk Usage: <%= @@disk_usage -%></h1>
+<%- end -%>
+
+<div class="row">
+  <div class="col-md-8">
+      </div>
+
+  <div class="col-md-4">
+    <h3><%= t('.actions') %></h3>
+    <p><%= link_to 'Edit', edit_disk_usage_path(@disk_usage), class: 'btn btn-warning' %></p>
+    <p><%= link_to 'Destroy', disk_usage, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger'%></p>
+    <p><%= link_to 'Back', disk_usages_path, class: 'btn btn-default' %></p>
+  </div>
+</div>
