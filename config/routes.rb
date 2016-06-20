@@ -38,6 +38,10 @@
 #
 
 Rails.application.routes.draw do
+  resources :cpu_usages
+  resources :cpu_usages
+  resources :cpu_usages
+  resources :cpu_usages
   devise_for :users
 
   resources :servers
