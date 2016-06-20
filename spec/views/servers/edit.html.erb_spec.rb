@@ -2,9 +2,7 @@ require 'rails_helper'
 
 RSpec.describe "servers/edit", type: :view do
   before(:each) do
-    @server = assign(:server, Server.create!(
-      :name => "MyString"
-    ))
+    @server = assign(:server, FactoryGirl.create(:server))
   end
 
   it "renders the edit server form" do

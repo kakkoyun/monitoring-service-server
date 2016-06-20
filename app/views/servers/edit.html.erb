@@ -1,6 +1,13 @@
-<h1>Editing Server</h1>
+<%= content_for :header do -%>
+    <h1>Editing Server
+      <span class="actions">
+        <%= link_to 'Show', @server, class: 'btn btn-info' %>
+      </span>
+    </h1>
+<%- end -%>
 
-<%= render 'form' %>
 
-<%= link_to 'Show', @server %> |
-<%= link_to 'Back', servers_path %>
+
+<div class="row">
+  <%= render 'form' %>
+</div>

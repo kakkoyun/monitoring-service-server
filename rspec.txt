@@ -1,0 +1,75 @@
+
+ServersController
+  GET #index
+[32m    assigns all servers as @servers[0m
+  GET #show
+[32m    assigns the requested server as @server[0m
+  GET #new
+[32m    assigns a new server as @server[0m
+  GET #edit
+[32m    assigns the requested server as @server[0m
+  POST #create
+    with valid params
+[32m      creates a new Server[0m
+[32m      assigns a newly created server as @server[0m
+[32m      redirects to the created server[0m
+    with invalid params
+[32m      assigns a newly created but unsaved server as @server[0m
+[32m      re-renders the 'new' template[0m
+  PUT #update
+    with valid params
+[32m      updates the requested server[0m
+[32m      assigns the requested server as @server[0m
+[32m      redirects to the server[0m
+    with invalid params
+[32m      assigns the server as @server[0m
+[32m      re-renders the 'edit' template[0m
+  DELETE #destroy
+[32m    destroys the requested server[0m
+[32m    redirects to the servers list[0m
+
+Server
+[32m  has a valid factory[0m
+[32m  is invalid without a name[0m
+[32m  is invalid without an application[0m
+[32m  belongs_to application[0m
+[32m  has a public_ip field[0m
+[32m  should be a timestamped Mongoid document[0m
+
+AgentApplicationsController
+  routing
+[32m    routes to #index[0m
+[32m    routes to #new[0m
+[32m    routes to #show[0m
+[32m    routes to #edit[0m
+[32m    routes to #create[0m
+[32m    routes to #update via PUT[0m
+[32m    routes to #update via PATCH[0m
+[32m    routes to #destroy[0m
+
+ServersController
+  routing
+[32m    routes to #index[0m
+[32m    routes to #new[0m
+[32m    routes to #show[0m
+[32m    routes to #edit[0m
+[32m    routes to #create[0m
+[32m    routes to #update via PUT[0m
+[32m    routes to #update via PATCH[0m
+[32m    routes to #destroy[0m
+
+servers/edit
+[32m  renders the edit server form[0m
+
+servers/index
+[32m  renders a list of servers[0m
+
+servers/new
+[32m  renders new server form[0m
+
+servers/show
+[32m  renders attributes in <p>[0m
+
+Finished in 1.59 seconds (files took 6.17 seconds to load)
+[32m42 examples, 0 failures[0m
+

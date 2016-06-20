@@ -2,9 +2,7 @@ require 'rails_helper'
 
 RSpec.describe "servers/show", type: :view do
   before(:each) do
-    @server = assign(:server, Server.create!(
-      :name => "Name"
-    ))
+    @server = assign(:server, FactoryGirl.create(:server))
   end
 
   it "renders attributes in <p>" do

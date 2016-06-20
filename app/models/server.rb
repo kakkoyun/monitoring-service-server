@@ -3,10 +3,14 @@ class Server
   include Mongoid::Timestamps
 
   field :name, type: String
+  field :public_ip, type: String
 
   belongs_to :application, class_name: Doorkeeper::Application.name
 
-  def application_id
-    application.id
+  validates :name, presence: true
+  validates :application, presence: true
+
+  def to_s
+    name
   end
 end

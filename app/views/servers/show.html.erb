@@ -1,9 +1,33 @@
-<p id="notice"><%= notice %></p>
+<%= content_for :header do -%>
+    <h1>Server: <%= @server -%></h1>
+<%- end -%>
 
-<p>
-  <strong>Name:</strong>
-  <%= @server.name %>
-</p>
+<div class="row">
+  <div class="col-md-8">
+    <%- if @server.name -%>
+        <h4>
+          <small>Name:</small>
+        </h4>
+        <p class="lead"><%= @server.name %></p>
+    <%- end -%>
+    <%- if @server.public_ip -%>
+        <h4>
+          <small>Public IP:</small>
+        </h4>
+        <p class="lead"><%= @server.public_ip %></p>
+    <%- end -%>
+    <%- if @server.application -%>
+        <h4>
+          <small>Application:</small>
+        </h4>
+        <p class="lead"><%= link_to @server.application.name, oauth_application_path(@server.application) %></p>
+    <%- end -%>
+  </div>
 
-<%= link_to 'Edit', edit_server_path(@server) %> |
-<%= link_to 'Back', servers_path %>
+  <div class="col-md-4">
+    <h3><%= t('.actions') %></h3>
+    <p><%= link_to 'Edit', edit_server_path(@server), class: 'btn btn-warning' %></p>
+    <p><%= link_to 'Destroy', @server, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %></p>
+    <p><%= link_to 'Back', servers_path, class: 'btn btn-default' %></p>
+  </div>
+</div>
