@@ -28,13 +28,38 @@ ServersController
 [32m    destroys the requested server[0m
 [32m    redirects to the servers list[0m
 
-Server
-[32m  has a valid factory[0m
-[32m  is invalid without a name[0m
-[32m  is invalid without an application[0m
-[32m  belongs_to application[0m
-[32m  has a public_ip field[0m
+CpuUsage
 [32m  should be a timestamped Mongoid document[0m
+[32m  has a valid factory[0m
+  associations
+[32m    belong to server[0m
+  validations
+[32m    is invalid without a server[0m
+[32m    is invalid without an amount[0m
+
+Server
+[32m  should be a timestamped Mongoid document[0m
+[32m  has a valid factory[0m
+  associations
+[32m    belong to application[0m
+[32m    have many cpu usages[0m
+  validations
+[32m    is invalid without a name[0m
+[32m    is invalid without an application[0m
+[32m    is invalid without an public_ip[0m
+
+CpuUsages
+  POST /cpu_usages
+[32m    creates a Cpu Usage with valid parameters[0m
+[32m    creates a Cpu Usage with given parameters[0m
+[32m    succeeded and return 201 with valid parameters[0m
+[32m    fails and return 406 with wrong format and return proper status code[0m
+[32m    fails and return 422 with invalid params[0m
+[32m    fails and return 401 with invalid token[0m
+
+API V1 routing
+  Api::V1::CpuUsagesController
+[32m    routes to cpu_usage#create[0m
 
 AgentApplicationsController
   routing
@@ -70,6 +95,6 @@ servers/new
 servers/show
 [32m  renders attributes in <p>[0m
 
-Finished in 1.59 seconds (files took 6.17 seconds to load)
-[32m42 examples, 0 failures[0m
+Finished in 2.17 seconds (files took 6.27 seconds to load)
+[32m55 examples, 0 failures[0m
 

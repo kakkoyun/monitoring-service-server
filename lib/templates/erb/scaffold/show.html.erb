@@ -5,7 +5,7 @@
 <div class="row">
   <div class="col-md-8">
     <% attributes.reject(&:password_digest?).each do |attribute| -%>
-        <%%- if <%%= @<%= singular_table_name %>.<%= attribute.name %> -%>
+        <%%- if  @<%= singular_table_name %>.<%= attribute.name %> -%>
         <small><%= attribute.human_name %>:</small>
         <p class="lead"><%%= @<%= singular_table_name %>.<%= attribute.name %> %></p>
         <%%- end -%>

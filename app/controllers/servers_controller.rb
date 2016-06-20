@@ -48,6 +48,6 @@ class ServersController < ApplicationController
   end
 
   def server_params
-    params.require(:server).permit(:name, :application_id)
+    params.require(:server).permit(:name, :application_id, :public_ip)
   end
 end

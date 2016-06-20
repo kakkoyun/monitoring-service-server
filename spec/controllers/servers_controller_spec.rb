@@ -25,7 +25,7 @@ RSpec.describe ServersController, type: :controller do
   }
 
   let(:invalid_attributes) {
-    FactoryGirl.attributes_for(:server, name: nil, application: nil)
+    FactoryGirl.attributes_for(:server, name: nil, application: nil, public_ip: nil)
   }
 
   before(:each) { sign_in }
