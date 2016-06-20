@@ -15,10 +15,10 @@ RSpec.describe "DiskUsages", type: :request do
     end
 
     it "creates a Disk Usage with given parameters" do
-      expect { post api_v1_disk_usages_path,
-                    disk_usage:   disk_usage.attributes,
-                    format:       :json,
-                    access_token: access_token.token }.to change(DiskUsage, :count).by(1)
+      post api_v1_disk_usages_path,
+           disk_usage:   disk_usage.attributes,
+           format:       :json,
+           access_token: access_token.token
       expect(DiskUsage.last.amount).to eq disk_usage.amount
     end
 
@@ -48,7 +48,7 @@ RSpec.describe "DiskUsages", type: :request do
 
     it "fails and return 401 with invalid token" do
       post api_v1_disk_usages_path,
-           disk_usage:   {},
+           disk_usage:   disk_usage.attributes,
            format:       :json,
            access_token: "invalid_token"
       expect(response).to have_http_status(401)

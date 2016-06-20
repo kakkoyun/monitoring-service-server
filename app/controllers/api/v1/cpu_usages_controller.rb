@@ -1,6 +1,6 @@
 class Api::V1::CpuUsagesController < Api::V1::BaseController
 
-  api :POST, '/cpu_usages/:id', 'Create CPU Usage Resource'
+  api :POST, '/cpu_usages', 'Create CPU Usage Resource'
   param :amount, BigDecimal, desc: "amount of usage in %", required: true
   description "Creates Cpu usage with given amount, determines server from authentication token."
   formats ['json']

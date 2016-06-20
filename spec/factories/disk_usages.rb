@@ -1,8 +1,7 @@
 FactoryGirl.define do
 
   factory :disk_usage do
-    server { FactoryGirl.create(:server) }
-    server_id { server.id }
+    server
     amount { Faker::Number.positive }
     ratio { Faker::Number.decimal(2) }
   end

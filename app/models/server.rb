@@ -9,6 +9,7 @@ class Server
 
   has_many :cpu_usages, inverse_of: :server, dependent: :destroy
   has_many :disk_usages, inverse_of: :server, dependent: :destroy
+  has_many :process_tables, inverse_of: :server, dependent: :destroy
 
   validates :name, presence: true
   validates :application, presence: true

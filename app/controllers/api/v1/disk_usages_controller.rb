@@ -1,6 +1,6 @@
 class Api::V1::DiskUsagesController < Api::V1::BaseController
 
-  api :POST, '/disk_usage/:id', 'Create Disk Usage Resource'
+  api :POST, '/disk_usages', 'Create Disk Usage Resource'
   param :amount, Integer, desc: "amount of usage.", required: true
   param :ration, BigDecimal, desc: "ratio of usage in %", required: true
   description "Creates Disk usage with given amount and ratio, determines server from authentication token."

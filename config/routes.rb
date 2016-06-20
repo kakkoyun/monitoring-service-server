@@ -45,6 +45,8 @@
 #        apipie_apipie_checksum GET    /api/documentation/apipie_checksum(.:format)                  apipie/apipies#apipie_checksum {:format=>/json/}
 #                 apipie_apipie GET    /api/documentation(/:version)(/:resource)(/:method)(.:format) apipie/apipies#index {:version=>/[^\/]+/, :resource=>/[^\/]+/, :method=>/[^\/]+/}
 #             api_v1_cpu_usages POST   /api/v1/cpu_usages(.:format)                                  api/v1/cpu_usages#create
+#            api_v1_disk_usages POST   /api/v1/disk_usages(.:format)                                 api/v1/disk_usages#create
+#         api_v1_process_tables POST   /api/v1/process_tables(.:format)                              api/v1/process_tables#create
 #
 
 Rails.application.routes.draw do
@@ -67,6 +69,7 @@ Rails.application.routes.draw do
     namespace :v1 do
       resources :cpu_usages, only: [:create]
       resources :disk_usages, only: [:create]
+      resources :process_tables, only: [:create]
     end
   end
 end

@@ -47,6 +47,24 @@ DiskUsage
 [32m    is invalid without an amount[0m
 [32m    is invalid without a ratio[0m
 
+ProcessTableItem
+[32m  has a valid factory[0m
+  associations
+[32m    embeds in process table[0m
+  validations
+[32m    is invalid without a process table[0m
+[32m    is invalid without a name[0m
+[32m    is invalid without an cpu usage amount[0m
+
+ProcessTable
+[32m  should be a timestamped Mongoid document[0m
+[32m  has a valid factory[0m
+  associations
+[32m    belong to server[0m
+[32m    should embed many "process_table_items"[0m
+  validations
+[32m    is invalid without a server[0m
+
 Server
 [32m  should be a timestamped Mongoid document[0m
 [32m  has a valid factory[0m
@@ -77,9 +95,20 @@ DiskUsages
 [32m    fails and return 422 with invalid params[0m
 [32m    fails and return 401 with invalid token[0m
 
+ProcessTables
+  POST /process_tables
+[32m    creates a Process Table with valid parameters[0m
+[32m    creates a Process Table with given parameters[0m
+[32m    succeeded and return 201 with valid parameters[0m
+[32m    fails and return 406 with wrong format and return proper status code[0m
+[32m    fails and return 422 with invalid params[0m
+[32m    fails and return 401 with invalid token[0m
+
 API V1 routing
   Api::V1::CpuUsagesController
 [32m    routes to cpu_usage#create[0m
+[32m    routes to disk_usage#create[0m
+[32m    routes to process_table#create[0m
 
 AgentApplicationsController
   routing
@@ -115,6 +144,6 @@ servers/new
 servers/show
 [32m  renders attributes in <p>[0m
 
-Finished in 2.55 seconds (files took 6.33 seconds to load)
-[32m68 examples, 0 failures[0m
+Finished in 3.22 seconds (files took 6.38 seconds to load)
+[32m86 examples, 0 failures[0m
 

@@ -15,10 +15,10 @@ RSpec.describe "CpuUsages", type: :request do
     end
 
     it "creates a Cpu Usage with given parameters" do
-      expect { post api_v1_cpu_usages_path,
-                    cpu_usage:    cpu_usage.attributes,
-                    format:       :json,
-                    access_token: access_token.token }.to change(CpuUsage, :count).by(1)
+      post api_v1_cpu_usages_path,
+           cpu_usage:    cpu_usage.attributes,
+           format:       :json,
+           access_token: access_token.token
       expect(CpuUsage.last.amount).to eq cpu_usage.amount
     end
 
@@ -48,7 +48,7 @@ RSpec.describe "CpuUsages", type: :request do
 
     it "fails and return 401 with invalid token" do
       post api_v1_cpu_usages_path,
-           cpu_usage:    {},
+           cpu_usage:    cpu_usage.attributes,
            format:       :json,
            access_token: "invalid_token"
       expect(response).to have_http_status(401)
