@@ -42,5 +42,24 @@ module MonitoringServiceServer
       # Only Authorized Applications
       Doorkeeper::AuthorizedApplicationsController.layout "application"
     end
+
+    # Disable auto include of all helpers
+    config.action_controller.include_all_helpers = false
+
+    # Configure generators
+    config.generators do |g|
+      g.helper false
+      g.assets false
+      g.stylesheets false
+      g.javascripts false
+      g.test_framework :rspec,
+                       fixtures:         true,
+                       request_specs:    true,
+                       controller_specs: true,
+                       view_specs:       true,
+                       routing_specs:    false,
+                       helper_specs:     false
+      g.fixture_replacement :factory_girl, dir: "spec/factories"
+    end
   end
 end
