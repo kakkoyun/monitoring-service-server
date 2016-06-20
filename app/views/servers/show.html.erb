@@ -31,3 +31,63 @@
     <p><%= link_to 'Back', servers_path, class: 'btn btn-default' %></p>
   </div>
 </div>
+
+<div class="row">
+  <%- if @server.cpu_usages.exists? %>
+      <div class="col-sm-6">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h4>CPU Usage</h4>
+          </div>
+          <div class="panel-body">
+            <p class="lead"><%= number_with_precision(@last_cpu_usage.amount, precision: 2) -%> %</p>
+            <p class="small"><%= l @last_cpu_usage.created_at, format: :short -%></p>
+          </div>
+        </div>
+      </div>
+  <% end %>
+
+  <%- if @server.disk_usages.exists? %>
+      <div class="col-sm-6">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h4>Disk Usage</h4>
+          </div>
+          <div class="panel-body">
+            <p class="lead"><%= @last_disk_usage.amount -%> GB</p>
+            <p class="lead"><%= number_with_precision(@last_disk_usage.ratio, precision: 2) -%> %</p>
+            <p class="small"><%= l @last_disk_usage.created_at, format: :short -%></p>
+          </div>
+        </div>
+      </div>
+  <%- end -%>
+</div>
+
+<%- if @server.process_tables.exists? %>
+    <div class="row">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h4>Process Table</h4>
+        </div>
+        <div class="panel-body">
+          <p class="small"><%= @server.process_tables.last.process_table_items.count -%> processes.</p>
+          <table class="table">
+            <thead>
+            <tr>
+              <td><strong>Process Name</strong></td>
+              <td><strong>CPU %</strong></td>
+            </tr>
+            </thead>
+            <tbody>
+            <%- @process_table_items.each do |item| -%>
+                <tr>
+                  <td><%= item.name -%></td>
+                  <td><%= number_with_precision(item.cpu_usage_amount, precision: 2) -%></td>
+                </tr>
+            <%- end -%>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+<%- end -%>

@@ -24,3 +24,6 @@
 // Turbolinks settings
 Turbolinks.enableProgressBar();
 Turbolinks.pagesCached(20);
+
+// Constant Polling Interval for report updates.
+var POLL_INTERVAL = 5000;

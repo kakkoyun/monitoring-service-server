@@ -5,11 +5,18 @@ class ServersController < ApplicationController
   set_tab :servers
 
   def index
-    @servers = Server.all
+    @servers                     = Server.all
+    # NOTICE: This is why I like Relational databases much much more.
+    @servers_with_most_cpu_usage = CpuUsage.order_by(amount: :desc, created_at: :desc).to_a.map(&:server).uniq
+    @servers_with_low_disk_space = DiskUsage.order_by(ratio: :desc, created_at: :desc).to_a.map(&:server).uniq
     respond_with(@servers)
   end
 
   def show
+    @last_cpu_usage      = @server.cpu_usages.order_by(created_at: :desc).last
+    @last_disk_usage     = @server.disk_usages.order_by(created_at: :desc).last
+    process_table        = @server.process_tables.order_by(created_at: :desc).last
+    @process_table_items = process_table.process_table_items.order_by(cpu_usage_amount: :desc) if process_table
     respond_with(@server)
   end
 
@@ -50,4 +57,5 @@ class ServersController < ApplicationController
   def server_params
     params.require(:server).permit(:name, :application_id, :public_ip)
   end
+
 end
