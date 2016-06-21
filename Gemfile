@@ -98,8 +98,10 @@ group :development do
   gem 'annotate'
 
   # Deployment
-  gem 'knife-solo'
-  gem 'capistrano-rails'
+  gem "capistrano"
+  gem "capistrano-rbenv"
+  gem "capistrano-bundler"
+  gem 'capistrano-passenger'
 end
 
 group :production do
