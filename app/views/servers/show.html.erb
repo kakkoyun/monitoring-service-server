@@ -70,7 +70,8 @@
           <h4>Process Table</h4>
         </div>
         <div class="panel-body">
-          <p class="small"><%= @server.process_tables.last.process_table_items.count -%> processes.</p>
+          <p class="small"><%= @process_table_items.count -%> processes.</p>
+          <p class="small"><%= l @process_table.created_at, format: :short -%></p>
           <table class="table">
             <thead>
             <tr>

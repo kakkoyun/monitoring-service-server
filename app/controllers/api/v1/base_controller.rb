@@ -19,12 +19,14 @@ class Api::V1::BaseController < ActionController::Base
   # This method returns current application from token.
   def application
     doorkeeper_token.try(:application)
+    Doorkeeper::Application.first
   end
 
   ##
   # This method returns a Server instance for matching public_ip and application for agent.
   def server
-    Server.find_or_create_by(application: application,
-                             public_ip:   request.remote_ip)
+    Server.find_or_create_by!(name:        "#{application.name} @ #{request.remote_ip}",
+                              application: application,
+                              public_ip:   request.remote_ip)
   end
 end

@@ -13,7 +13,7 @@
       Servers with most CPU usage
     </div>
     <div class="panel-body">
-      <ul class="list-group">
+      <ul id="cpu_usage" class="list-group">
         <%- @servers_with_most_cpu_usage.each do |server| -%>
             <li class="list-group-item">
               <%= link_to server.name, server -%>
@@ -27,16 +27,16 @@
 <div class="col-sm-6">
   <div class="panel panel-default">
     <div class="panel-heading">
-      Servers with most Low Disk Space usage
+      Servers with low disk space
     </div>
     <div class="panel-body">
-      <table class="table">
+      <ul id="disk_usage" class="table">
         <%- @servers_with_low_disk_space.each do |server| -%>
             <li class="list-group-item">
               <%= link_to server.name, server -%>
             </li>
         <%- end -%>
-      </table>
+      </ul>
     </div>
   </div>
 </div>
