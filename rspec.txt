@@ -144,6 +144,6 @@ servers/new
 servers/show
 [32m  renders attributes in <p>[0m
 
-Finished in 3.21 seconds (files took 6.94 seconds to load)
+Finished in 5.11 seconds (files took 7.19 seconds to load)
 [32m86 examples, 0 failures[0m
 
