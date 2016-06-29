@@ -4,7 +4,7 @@ RSpec.describe DiskUsage, type: :model do
   it { is_expected.to be_timestamped_document }
 
   it "has a valid factory" do
-    expect(FactoryGirl.build(:disk_usage)).to be_valid
+    expect(build(:disk_usage)).to be_valid
   end
 
   context "associations" do
@@ -15,15 +15,15 @@ RSpec.describe DiskUsage, type: :model do
 
   context "validations" do
     it "is invalid without a server" do
-      expect(FactoryGirl.build(:disk_usage, server: nil)).not_to be_valid
+      expect(build(:disk_usage, server: nil)).not_to be_valid
     end
 
     it "is invalid without an amount" do
-      expect(FactoryGirl.build(:disk_usage, amount: nil)).not_to be_valid
+      expect(build(:disk_usage, amount: nil)).not_to be_valid
     end
 
     it "is invalid without a ratio" do
-      expect(FactoryGirl.build(:disk_usage, amount: nil)).not_to be_valid
+      expect(build(:disk_usage, amount: nil)).not_to be_valid
     end
   end
 end

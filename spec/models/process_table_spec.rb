@@ -4,7 +4,7 @@ RSpec.describe ProcessTable, type: :model do
   it { is_expected.to be_timestamped_document }
 
   it "has a valid factory" do
-    expect(FactoryGirl.build(:process_table)).to be_valid
+    expect(build(:process_table)).to be_valid
   end
 
   context "associations" do
@@ -17,7 +17,7 @@ RSpec.describe ProcessTable, type: :model do
 
   context "validations" do
     it "is invalid without a server" do
-      expect(FactoryGirl.build(:process_table, server: nil)).not_to be_valid
+      expect(build(:process_table, server: nil)).not_to be_valid
     end
   end
 end

@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe "servers/new", type: :view do
   before(:each) do
-    assign(:server, FactoryGirl.build(:server))
+    assign(:server, build(:server))
   end
 
   it "renders new server form" do

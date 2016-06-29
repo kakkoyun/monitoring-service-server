@@ -20,13 +20,8 @@ require 'rails_helper'
 
 RSpec.describe ServersController, type: :controller do
 
-  let(:valid_attributes) {
-    FactoryGirl.attributes_for(:server)
-  }
-
-  let(:invalid_attributes) {
-    FactoryGirl.attributes_for(:server, name: nil, application: nil, public_ip: nil)
-  }
+  let(:valid_attributes) { attributes_for(:server) }
+  let(:invalid_attributes) { attributes_for(:server, name: nil, application: nil, public_ip: nil) }
 
   before(:each) { sign_in }
 
@@ -97,13 +92,8 @@ RSpec.describe ServersController, type: :controller do
   describe "PUT #update" do
     context "with valid params" do
 
-      let(:new_server) {
-        FactoryGirl.build(:server)
-      }
-
-      let(:new_attributes) {
-        new_server.attributes
-      }
+      let(:new_server) { build(:server) }
+      let(:new_attributes) { new_server.attributes }
 
       it "updates the requested server" do
         server = Server.create valid_attributes

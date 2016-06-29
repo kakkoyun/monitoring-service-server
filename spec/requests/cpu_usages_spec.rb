@@ -3,9 +3,9 @@ require 'rails_helper'
 RSpec.describe "CpuUsages", type: :request do
   describe "POST /cpu_usages" do
 
-    let!(:access_token) { FactoryGirl.create(:access_token) }
-    let!(:server) { FactoryGirl.create(:server, application: access_token.application) }
-    let!(:cpu_usage) { FactoryGirl.build(:cpu_usage, server: server) }
+    let!(:access_token) { create(:access_token) }
+    let!(:server) { create(:server, application: access_token.application) }
+    let!(:cpu_usage) { build(:cpu_usage, server: server) }
 
     it "creates a Cpu Usage with valid parameters" do
       expect { post api_v1_cpu_usages_path,

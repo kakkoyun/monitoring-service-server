@@ -3,16 +3,16 @@ require 'rails_helper'
 RSpec.describe "servers/index", type: :view do
   before(:each) do
     assign(:servers, [
-        FactoryGirl.build_stubbed(:server, name: 'falcon'),
-        FactoryGirl.build_stubbed(:server, name: 'falcon')
+        build_stubbed(:server, name: 'falcon'),
+        build_stubbed(:server, name: 'falcon')
     ])
     assign(:servers_with_most_cpu_usage, [
-        FactoryGirl.build_stubbed(:server, name: 'millenium'),
-        FactoryGirl.build_stubbed(:server, name: 'millenium')
+        build_stubbed(:server, name: 'millenium'),
+        build_stubbed(:server, name: 'millenium')
     ])
     assign(:servers_with_low_disk_space, [
-        FactoryGirl.build_stubbed(:server, name: 'empire'),
-        FactoryGirl.build_stubbed(:server, name: 'empire')
+        build_stubbed(:server, name: 'empire'),
+        build_stubbed(:server, name: 'empire')
     ])
   end
 

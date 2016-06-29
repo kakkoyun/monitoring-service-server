@@ -3,9 +3,9 @@ require 'rails_helper'
 RSpec.describe "ProcessTables", type: :request do
   describe "POST /process_tables" do
 
-    let!(:access_token) { FactoryGirl.create(:access_token) }
-    let!(:server) { FactoryGirl.create(:server, application: access_token.application) }
-    let!(:process_table) { FactoryGirl.build(:process_table, server: server) }
+    let!(:access_token) { create(:access_token) }
+    let!(:server) { create(:server, application: access_token.application) }
+    let!(:process_table) { build(:process_table, server: server) }
     let!(:process_table_attributes) { process_table.attributes.merge(
         { process_table_items_attributes: process_table.process_table_items.map(&:attributes) }
     ) }

@@ -3,9 +3,9 @@ require 'rails_helper'
 RSpec.describe "DiskUsages", type: :request do
   describe "POST /disk_usages" do
 
-    let!(:access_token) { FactoryGirl.create(:access_token) }
-    let!(:server) { FactoryGirl.create(:server, application: access_token.application) }
-    let!(:disk_usage) { FactoryGirl.build(:disk_usage, server: server) }
+    let!(:access_token) { create(:access_token) }
+    let!(:server) { create(:server, application: access_token.application) }
+    let!(:disk_usage) { build(:disk_usage, server: server) }
 
     it "creates a Disk Usage with valid parameters" do
       expect { post api_v1_disk_usages_path,
