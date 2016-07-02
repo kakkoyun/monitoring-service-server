@@ -4,6 +4,10 @@ Dir["#{File.dirname(__FILE__)}/support/**/*.rb"].each { |f| require f }
 
 # Helpers without support files.
 require 'launchy'
+require 'simplecov'
+
+# Start coverage
+SimpleCov.start
 
 Rails.backtrace_cleaner.remove_silencers!
 

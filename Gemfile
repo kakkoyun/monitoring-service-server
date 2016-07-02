@@ -61,6 +61,7 @@ group :test do
   gem 'guard-rspec', '~> 4.7'
   gem 'database_cleaner', '~> 1.5'
   gem 'faker', git: 'git@github.com:stympy/faker.git'
+  gem 'simplecov', require: false
 end
 
 group :development do

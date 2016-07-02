@@ -14,6 +14,7 @@ ServersController
 [32m      assigns a newly created server as @server[0m
 [32m      redirects to the created server[0m
     with invalid params
+[32m      does not saves the new server in the database[0m
 [32m      assigns a newly created but unsaved server as @server[0m
 [32m      re-renders the 'new' template[0m
   PUT #update
@@ -144,6 +145,6 @@ servers/new
 servers/show
 [32m  renders attributes in <p>[0m
 
-Finished in 2.97 seconds (files took 7.52 seconds to load)
-[32m86 examples, 0 failures[0m
+Finished in 3.79 seconds (files took 12.28 seconds to load)
+[32m87 examples, 0 failures[0m
 

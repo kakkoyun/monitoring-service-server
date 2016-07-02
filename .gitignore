@@ -27,3 +27,4 @@
 .rake_tasks*
 .rbenv-gemsets
 .byebug_history
+coverage
