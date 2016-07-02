@@ -78,6 +78,9 @@ Server
 [32m    is invalid without an application[0m
 [32m    is invalid without an public_ip[0m
 
+User
+[32m  is expected to output #email as string[0m
+
 CpuUsages
   POST /cpu_usages
 [32m    creates a Cpu Usage with valid parameters[0m
@@ -145,6 +148,6 @@ servers/new
 servers/show
 [32m  renders attributes in <p>[0m
 
-Finished in 3.79 seconds (files took 12.28 seconds to load)
-[32m87 examples, 0 failures[0m
+Finished in 2.15 seconds (files took 7.95 seconds to load)
+[32m88 examples, 0 failures[0m
 
