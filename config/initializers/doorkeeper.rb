@@ -18,7 +18,7 @@ Doorkeeper.configure do
   # end
 
   admin_authenticator do
-    current_user || redirect_to(login_url)
+    current_user || redirect_to(new_user_session_url)
   end
 
   # Authorization Code expiration time (default 10 minutes).
